@@ -42,6 +42,11 @@
             this.BtnFind = new System.Windows.Forms.Button();
             this.BtnShow = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
+            this.User_PictureBox = new System.Windows.Forms.PictureBox();
+            this.Add_Image_Btn = new System.Windows.Forms.Button();
+            this.clearbtn = new System.Windows.Forms.Button();
+            this.ShowAllBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.User_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Header
@@ -70,7 +75,7 @@
             this.TxtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtId.Location = new System.Drawing.Point(293, 166);
+            this.TxtId.Location = new System.Drawing.Point(195, 165);
             this.TxtId.MaxLength = 50;
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(373, 26);
@@ -86,7 +91,7 @@
             this.TxtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtName.Location = new System.Drawing.Point(293, 231);
+            this.TxtName.Location = new System.Drawing.Point(195, 230);
             this.TxtName.MaxLength = 50;
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(373, 26);
@@ -97,7 +102,7 @@
             this.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(293, 294);
+            this.TxtPassword.Location = new System.Drawing.Point(195, 293);
             this.TxtPassword.MaxLength = 50;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
@@ -110,7 +115,7 @@
             this.LblId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
             this.LblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblId.ForeColor = System.Drawing.Color.White;
-            this.LblId.Location = new System.Drawing.Point(193, 166);
+            this.LblId.Location = new System.Drawing.Point(95, 165);
             this.LblId.Name = "LblId";
             this.LblId.Size = new System.Drawing.Size(99, 26);
             this.LblId.TabIndex = 4;
@@ -122,7 +127,7 @@
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(173, 231);
+            this.lblName.Location = new System.Drawing.Point(75, 230);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(117, 26);
             this.lblName.TabIndex = 5;
@@ -134,7 +139,7 @@
             this.LblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
             this.LblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPassword.ForeColor = System.Drawing.Color.White;
-            this.LblPassword.Location = new System.Drawing.Point(153, 294);
+            this.LblPassword.Location = new System.Drawing.Point(55, 293);
             this.LblPassword.Name = "LblPassword";
             this.LblPassword.Size = new System.Drawing.Size(137, 26);
             this.LblPassword.TabIndex = 6;
@@ -148,7 +153,7 @@
             this.BtnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegister.ForeColor = System.Drawing.Color.White;
-            this.BtnRegister.Location = new System.Drawing.Point(158, 399);
+            this.BtnRegister.Location = new System.Drawing.Point(60, 398);
             this.BtnRegister.Name = "BtnRegister";
             this.BtnRegister.Size = new System.Drawing.Size(103, 38);
             this.BtnRegister.TabIndex = 7;
@@ -164,7 +169,7 @@
             this.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFind.ForeColor = System.Drawing.Color.White;
-            this.BtnFind.Location = new System.Drawing.Point(293, 399);
+            this.BtnFind.Location = new System.Drawing.Point(195, 398);
             this.BtnFind.Name = "BtnFind";
             this.BtnFind.Size = new System.Drawing.Size(103, 38);
             this.BtnFind.TabIndex = 8;
@@ -180,7 +185,7 @@
             this.BtnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnShow.ForeColor = System.Drawing.Color.White;
-            this.BtnShow.Location = new System.Drawing.Point(430, 399);
+            this.BtnShow.Location = new System.Drawing.Point(332, 398);
             this.BtnShow.Name = "BtnShow";
             this.BtnShow.Size = new System.Drawing.Size(103, 38);
             this.BtnShow.TabIndex = 9;
@@ -196,7 +201,7 @@
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.White;
-            this.BtnExit.Location = new System.Drawing.Point(563, 399);
+            this.BtnExit.Location = new System.Drawing.Point(465, 398);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(103, 38);
             this.BtnExit.TabIndex = 10;
@@ -204,12 +209,74 @@
             this.BtnExit.UseVisualStyleBackColor = false;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
+            // User_PictureBox
+            // 
+            this.User_PictureBox.Image = global::EnterData.Properties.Resources.None_Img;
+            this.User_PictureBox.Location = new System.Drawing.Point(610, 165);
+            this.User_PictureBox.Name = "User_PictureBox";
+            this.User_PictureBox.Size = new System.Drawing.Size(221, 216);
+            this.User_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.User_PictureBox.TabIndex = 11;
+            this.User_PictureBox.TabStop = false;
+            // 
+            // Add_Image_Btn
+            // 
+            this.Add_Image_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(135)))), ((int)(((byte)(31)))));
+            this.Add_Image_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_Image_Btn.FlatAppearance.BorderSize = 0;
+            this.Add_Image_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_Image_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_Image_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_Image_Btn.Location = new System.Drawing.Point(610, 398);
+            this.Add_Image_Btn.Name = "Add_Image_Btn";
+            this.Add_Image_Btn.Size = new System.Drawing.Size(221, 38);
+            this.Add_Image_Btn.TabIndex = 12;
+            this.Add_Image_Btn.Text = "Add";
+            this.Add_Image_Btn.UseVisualStyleBackColor = false;
+            this.Add_Image_Btn.Click += new System.EventHandler(this.Add_Image_Btn_Click);
+            // 
+            // clearbtn
+            // 
+            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(78)))), ((int)(((byte)(20)))));
+            this.clearbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearbtn.FlatAppearance.BorderSize = 0;
+            this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearbtn.ForeColor = System.Drawing.Color.White;
+            this.clearbtn.Location = new System.Drawing.Point(465, 442);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(103, 38);
+            this.clearbtn.TabIndex = 13;
+            this.clearbtn.Text = "clear";
+            this.clearbtn.UseVisualStyleBackColor = false;
+            this.clearbtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ShowAllBtn
+            // 
+            this.ShowAllBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(135)))), ((int)(((byte)(31)))));
+            this.ShowAllBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowAllBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAllBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAllBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowAllBtn.ForeColor = System.Drawing.Color.White;
+            this.ShowAllBtn.Location = new System.Drawing.Point(332, 442);
+            this.ShowAllBtn.Name = "ShowAllBtn";
+            this.ShowAllBtn.Size = new System.Drawing.Size(103, 38);
+            this.ShowAllBtn.TabIndex = 14;
+            this.ShowAllBtn.Text = "Show All";
+            this.ShowAllBtn.UseVisualStyleBackColor = false;
+            this.ShowAllBtn.Click += new System.EventHandler(this.ShowAllBtn_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.ShowAllBtn);
+            this.Controls.Add(this.clearbtn);
+            this.Controls.Add(this.Add_Image_Btn);
+            this.Controls.Add(this.User_PictureBox);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnShow);
             this.Controls.Add(this.BtnFind);
@@ -229,6 +296,7 @@
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.User_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,6 +317,10 @@
         private System.Windows.Forms.Button BtnFind;
         private System.Windows.Forms.Button BtnShow;
         private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.PictureBox User_PictureBox;
+        private System.Windows.Forms.Button Add_Image_Btn;
+        private System.Windows.Forms.Button clearbtn;
+        private System.Windows.Forms.Button ShowAllBtn;
     }
 }
 

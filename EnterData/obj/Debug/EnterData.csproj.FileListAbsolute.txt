@@ -8,3 +8,13 @@ C:\Users\Mohamed Mellouky\source\repos\EnterData\EnterData\obj\Debug\EnterData.c
 C:\Users\Mohamed Mellouky\source\repos\EnterData\EnterData\obj\Debug\EnterData.exe
 C:\Users\Mohamed Mellouky\source\repos\EnterData\EnterData\obj\Debug\EnterData.pdb
 C:\Users\Mohamed Mellouky\source\repos\EnterData\EnterData\obj\Debug\EnterData.main.resources
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\bin\Debug\EnterData.exe.config
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\bin\Debug\EnterData.exe
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\bin\Debug\EnterData.pdb
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\obj\Debug\EnterData.csprojAssemblyReference.cache
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\obj\Debug\EnterData.main.resources
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\obj\Debug\EnterData.Properties.Resources.resources
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\obj\Debug\EnterData.csproj.GenerateResource.cache
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\obj\Debug\EnterData.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\obj\Debug\EnterData.exe
+C:\Users\Mohamed Mellouky\Documents\csharp_GetData\csharp_GetData\EnterData\obj\Debug\EnterData.pdb

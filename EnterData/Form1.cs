@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace EnterData
 {
@@ -15,8 +16,8 @@ namespace EnterData
     {
         public main()
         {
-            InitializeComponent(); 
-            
+            InitializeComponent();
+            TxtPassword.PasswordChar = '*';
 
         }
 
@@ -25,8 +26,16 @@ namespace EnterData
             try
             {
                 StreamReader file_ = new StreamReader("Data.txt");
-                string ReadFileData = file_.ReadLine();
-                file_.Close(); 
+                string ReadFileData = file_.ReadToEnd();
+                file_.Close();
+
+                /* check if the user already exists */ 
+
+                if (ReadFileData.Contains(TxtId.Text + ";"))
+                {
+                    MessageBox.Show("This user already exist!");
+                    return;
+                }
 
                 StreamWriter file = new StreamWriter("Data.txt", true);
                 string data = TxtId.Text + ";" + TxtName.Text + ";" + TxtPassword.Text;
@@ -35,7 +44,7 @@ namespace EnterData
                 {
 
                     string ErrorMessage = "Please enter all your Data"; 
-                    MessageBox.Show(ErrorMessage);
+                    MessageBox.Show(ErrorMessage, "Missing information",0,MessageBoxIcon.Error);
                     TxtId.Focus();
                     return; 
                     
@@ -51,16 +60,27 @@ namespace EnterData
 
                 }
 
-                if (ReadFileData.Contains(TxtId.Text + ";"))
+                file.WriteLine(data);
+
+                /* save img in DataBase */
+
+                if ( Directory.Exists(@"../../../Data_Image"))
                 {
-                    MessageBox.Show("This user already exist!");
-                    return; 
+                    Directory.CreateDirectory(@"../../../Data_Image"); 
                 }
 
-                file.WriteLine(data);
-                TxtId.Clear();
-                TxtName.Clear();
-                TxtPassword.Clear();
+                User_PictureBox.Image.Save(@"../../../Data_Image/" + TxtId.Text + ".jpg"); 
+                
+
+                /* end save Image in DataBase */ 
+                
+                foreach(Control c in this.Controls)
+                {
+                   if (c is TextBox)
+                        c.Text = "";
+                }
+
+                User_PictureBox.Image = Properties.Resources.None_Img; 
                 MessageBox.Show("Done");
                 file.Close();
 
@@ -131,7 +151,16 @@ namespace EnterData
                         if (Data[0] == TxtId.Text)
                         {
                             TxtName.Text = Data[1];
+                            TxtPassword.PasswordChar = '\0';   
                             TxtPassword.Text = Data[2];
+                            if (!File.Exists(@"../../../Data_Image/" + Data[0] + ".jpg"))
+                            {  
+                                User_PictureBox.Image = Properties.Resources.None_Img;
+                            }
+                            else
+                            { 
+                                User_PictureBox.Image = Image.FromFile(@"../../../Data_Image/" + Data[0] + ".jpg");
+                            } 
                             found = true;
                        
                             break;
@@ -152,13 +181,51 @@ namespace EnterData
             }
             else
             {
-                MessageBox.Show("Please enter an Id"); 
+                MessageBox.Show("Please enter an Id");
+                found = true; /* to do not run the next if statement, */ 
             }
 
             if (!found)
             {
                 MessageBox.Show("user not found"); 
             }
+        }
+
+        private void Add_Image_Btn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            openfile.Title = "Choose an image";
+            openfile.Filter = "Images|*.jpg;*.png";
+            openfile.ShowDialog();
+
+            /* get image path */
+
+            string path = openfile.FileName;
+
+            User_PictureBox.Image = Image.FromFile(path); 
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach(Control c in this.Controls)
+            {
+                if(c is TextBox )
+                    {
+                    c.Text = ""; 
+                    }
+            }
+
+            User_PictureBox.Image = Properties.Resources.None_Img;
+
+            TxtPassword.PasswordChar = '*'; 
+        }
+
+        private void ShowAllBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
