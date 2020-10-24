@@ -21,6 +21,13 @@ namespace EnterData
 
         }
 
+        public void clear()
+        {
+            TxtId.Clear();
+            TxtName.Clear();
+            TxtPassword.Clear();
+        }
+
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             try
@@ -74,13 +81,16 @@ namespace EnterData
 
                 /* end save Image in DataBase */ 
                 
-                foreach(Control c in this.Controls)
+                foreach(Control c in Controls)
                 {
-                   if (c is TextBox)
-                        c.Text = "";
+                    if (c is TextBox)
+                        ((TextBox)c).Text = string.Empty; 
                 }
 
-                User_PictureBox.Image = Properties.Resources.None_Img; 
+                User_PictureBox.Image = Properties.Resources.None_Img;
+
+                clear(); 
+
                 MessageBox.Show("Done");
                 file.Close();
 
@@ -108,13 +118,16 @@ namespace EnterData
 
         private void BtnShow_Click(object sender, EventArgs e)
         {
-            Form ShowData = new Form();
-            TextBox txtShow = new TextBox(); 
+            Form ShowData = new Form(); 
+
+            /* convert from txtbox to label to get the readonly and deselected text feature */ 
+
+            Label txtShow = new Label(); 
+
             ShowData.StartPosition = FormStartPosition.CenterScreen;
             ShowData.Size = new System.Drawing.Size(300, 300);
-            txtShow.Multiline = true;
+
             txtShow.Font = new Font(this.Font.ToString(), 9, FontStyle.Bold); 
-            txtShow.ReadOnly = true; 
             txtShow.Dock = DockStyle.Fill; 
 
             try 
@@ -208,24 +221,19 @@ namespace EnterData
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            foreach(Control c in this.Controls)
-            {
-                if(c is TextBox )
-                    {
-                    c.Text = ""; 
-                    }
-            }
 
-            User_PictureBox.Image = Properties.Resources.None_Img;
-
-            TxtPassword.PasswordChar = '*'; 
-        }
 
         private void ShowAllBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            clear(); 
+            User_PictureBox.Image = Properties.Resources.None_Img;
+
+            TxtPassword.PasswordChar = '*';
         }
     }
 }

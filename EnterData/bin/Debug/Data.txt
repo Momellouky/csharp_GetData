@@ -1,9 +1,2 @@
-1111;Mohamed Mellouky;MyPassword2020./
-2222;Maryama Mellouky;ThisisMaryamaPass
-3333;Fatma Hakimi;HakimiPassword2020
-4444;Ahmed Mellouky;FatherPassword
-5555;Anas Kbili;anaspass2020./
-6666;Omar Hakimi;Passworddialomar
-7777;Otman hakimi;Passdialotman
-8888;Mohamed Mellouky;ThisisPassword
-9999;Raja Casablanca;ThisisPassword
+1000;Mohamed Mellouky;MyPassword2020
+1001;Khadija;Passdialkhadija
