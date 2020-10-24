@@ -43,13 +43,12 @@
             this.BtnExit = new System.Windows.Forms.Button();
             this.User_PictureBox = new System.Windows.Forms.PictureBox();
             this.Add_Image_Btn = new System.Windows.Forms.Button();
-            this.ShowAllBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.clearBtn = new System.Windows.Forms.Button();
+            this.ErrorProv = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.User_PictureBox)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProv)).BeginInit();
             this.SuspendLayout();
             // 
             // Header
@@ -230,28 +229,10 @@
             this.Add_Image_Btn.UseVisualStyleBackColor = false;
             this.Add_Image_Btn.Click += new System.EventHandler(this.Add_Image_Btn_Click);
             // 
-            // ShowAllBtn
-            // 
-            this.ShowAllBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(135)))), ((int)(((byte)(31)))));
-            this.ShowAllBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ShowAllBtn.FlatAppearance.BorderSize = 0;
-            this.ShowAllBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowAllBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowAllBtn.ForeColor = System.Drawing.Color.White;
-            this.ShowAllBtn.Location = new System.Drawing.Point(331, 392);
-            this.ShowAllBtn.Name = "ShowAllBtn";
-            this.ShowAllBtn.Size = new System.Drawing.Size(103, 38);
-            this.ShowAllBtn.TabIndex = 14;
-            this.ShowAllBtn.Text = "Show All";
-            this.ShowAllBtn.UseVisualStyleBackColor = false;
-            this.ShowAllBtn.Click += new System.EventHandler(this.ShowAllBtn_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(157)))), ((int)(((byte)(2)))));
             this.panel1.Controls.Add(this.clearBtn);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.ShowAllBtn);
             this.panel1.Controls.Add(this.TxtName);
             this.panel1.Controls.Add(this.TxtId);
             this.panel1.Controls.Add(this.Add_Image_Btn);
@@ -269,14 +250,6 @@
             this.panel1.Size = new System.Drawing.Size(885, 502);
             this.panel1.TabIndex = 15;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(573, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // clearBtn
             // 
             this.clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(135)))), ((int)(((byte)(31)))));
@@ -292,6 +265,10 @@
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
+            // ErrorProv
+            // 
+            this.ErrorProv.ContainerControl = this;
             // 
             // main
             // 
@@ -311,7 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.User_PictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,10 +309,9 @@
         private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.PictureBox User_PictureBox;
         private System.Windows.Forms.Button Add_Image_Btn;
-        private System.Windows.Forms.Button ShowAllBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.ErrorProvider ErrorProv;
     }
 }
 

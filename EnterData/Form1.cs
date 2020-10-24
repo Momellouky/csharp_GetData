@@ -38,20 +38,35 @@ namespace EnterData
 
                 /* check if the user already exists */ 
 
-                if (ReadFileData.Contains(TxtId.Text + ";"))
+                if (!string.IsNullOrEmpty(TxtId.Text))
                 {
-                    MessageBox.Show("This user already exist!");
-                    return;
+                    if (ReadFileData.Contains(TxtId.Text + ";"))
+                    {
+                        MessageBox.Show("This user already exist!");
+                        return;
+                    }
                 }
+
 
                 StreamWriter file = new StreamWriter("Data.txt", true);
                 string data = TxtId.Text + ";" + TxtName.Text + ";" + TxtPassword.Text;
                 //file.Close();
+                
+                var TxtBoxes = Controls.OfType<TextBox>();
+                
                 if (TxtId.Text.Length == 0 || TxtName.Text.Length == 0 || TxtPassword.Text.Length == 0)
                 {
 
-                    string ErrorMessage = "Please enter all your Data"; 
-                    MessageBox.Show(ErrorMessage, "Missing information",0,MessageBoxIcon.Error);
+                    //string ErrorMessage = "Please enter all your Data"; 
+                    //MessageBox.Show(ErrorMessage, "Missing information",0,MessageBoxIcon.Error);
+                    
+                    foreach(var Box  in TxtBoxes)
+                    {
+                        if ( string.IsNullOrEmpty(Box.Text))
+                        {
+                            ErrorProv.SetError(Box, "Enter This Field"); 
+                        }
+                    }    
                     TxtId.Focus();
                     return; 
                     
