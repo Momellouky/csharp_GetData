@@ -17,7 +17,9 @@ namespace EnterData
         public main()
         {
             InitializeComponent();
+            
             TxtPassword.PasswordChar = '*';
+            
 
         }
 
@@ -26,6 +28,14 @@ namespace EnterData
             TxtId.Clear();
             TxtName.Clear();
             TxtPassword.Clear();
+        }
+
+        public void setErrorProvider(TextBox c )
+        {
+            if (string.IsNullOrEmpty(c.Text))
+            {
+                ErrorProv.SetError(c , "Enter This Field");
+            }
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
@@ -47,27 +57,24 @@ namespace EnterData
                     }
                 }
 
-
                 StreamWriter file = new StreamWriter("Data.txt", true);
                 string data = TxtId.Text + ";" + TxtName.Text + ";" + TxtPassword.Text;
                 //file.Close();
-                
-                var TxtBoxes = Controls.OfType<TextBox>();
+
+                TextBox[] textBoxes = { TxtId, TxtName, TxtPassword }; 
                 
                 if (TxtId.Text.Length == 0 || TxtName.Text.Length == 0 || TxtPassword.Text.Length == 0)
                 {
 
                     //string ErrorMessage = "Please enter all your Data"; 
                     //MessageBox.Show(ErrorMessage, "Missing information",0,MessageBoxIcon.Error);
-                    
-                    foreach(var Box  in TxtBoxes)
-                    {
-                        if ( string.IsNullOrEmpty(Box.Text))
-                        {
-                            ErrorProv.SetError(Box, "Enter This Field"); 
-                        }
-                    }    
+
+                    setErrorProvider(TxtId);
+                    setErrorProvider(TxtName);
+                    setErrorProvider(TxtPassword); 
+
                     TxtId.Focus();
+                    file.Close(); 
                     return; 
                     
                 }
@@ -249,6 +256,46 @@ namespace EnterData
             User_PictureBox.Image = Properties.Resources.None_Img;
 
             TxtPassword.PasswordChar = '*';
+
+            ErrorProv.Clear(); 
+        }
+
+        private void User_PictureBox_Click(object sender, EventArgs e)
+        {
+            // 26/10/2020 NO CODE. 
+        }
+        
+        private void pastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void main_Load(object sender, EventArgs e)
+        {
+            User_PictureBox.AllowDrop = true; 
+        }
+
+        private void PastImg_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+        string[] file = null;
+        private void User_PictureBox_DragEnter(object sender, DragEventArgs e)
+        {
+            file = (string[])e.Data.GetData(DataFormats.FileDrop);
+            string pathExt = Path.GetExtension(file[0]);
+            
+            if (pathExt == ".jpg" && file.Count() == 1)
+            {
+                e.Effect = DragDropEffects.Copy; 
+            }
+            
+
+        }
+
+        private void User_PictureBox_DragDrop(object sender, DragEventArgs e)
+        {
+            User_PictureBox.Image = Image.FromFile(file[0]); 
         }
     }
 }

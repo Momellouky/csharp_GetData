@@ -1,2 +1,3 @@
 1000;Mohamed Mellouky;MyPassword2020
 1001;Khadija;Passdialkhadija
+1002;Raja Club Athletic;Rajacasablanca

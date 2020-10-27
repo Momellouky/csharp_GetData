@@ -212,6 +212,9 @@
             this.User_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.User_PictureBox.TabIndex = 11;
             this.User_PictureBox.TabStop = false;
+            this.User_PictureBox.Click += new System.EventHandler(this.User_PictureBox_Click);
+            this.User_PictureBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.User_PictureBox_DragDrop);
+            this.User_PictureBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.User_PictureBox_DragEnter);
             // 
             // Add_Image_Btn
             // 
@@ -285,6 +288,7 @@
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.User_PictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
